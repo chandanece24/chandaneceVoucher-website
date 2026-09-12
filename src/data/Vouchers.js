@@ -478,4 +478,3 @@ export const vouchersData = [
       "IBM Certified Solution Architect - Cloud v4 exam voucher. Design, plan, and architect secure IBM Cloud solutions.",
   },
 ];
-

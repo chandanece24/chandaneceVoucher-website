@@ -13,6 +13,12 @@ import VoucherSection from "./components/VoucherSection";
 // import VoucherSection from "./components/VoucherSection"; // ❌ সরানো হয়েছে (পেজ ব্যবহার করছি)
 import VoucherDetails from "./pages/VaoucherDetails"
 import ExamList from "./pages/ExamList";
+import AwsBlogDetails from "./Blog/AwsBlogDetails";
+import DatabricksVouchers from "./Blog/DatabricksVouchers";
+import ComptiaVouchers from "./Blog/ComptiaVouchers";
+import FortinetVouchers from "./Blog/FortinetVouchers";
+import GoogleCloudVouchers from "./Blog/GoogleCloudVoucher";
+import AzureBlogDetails from "./Blog/AzureBlogDetails"
 // Lazy load pages (code splitting)
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -53,14 +59,22 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="blog" element={<Blog />} />
+
             <Route path="how-it-works" element={<HowItWorks />} />
             <Route path="vouchers" element={<VoucherSection />} /> {/* ✅ Vouchers পেজ */}
             <Route path="reviews" element={<Reviews />} />
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
             <Route path="vouchers/:id" element={<VoucherDetails />} />
-            <Route path="vouchers/:id/exams" element={<ExamList/>}/>
+            <Route path="vouchers/:id/exams" element={<ExamList />} />
+
+            <Route path="blog/microsoft-azure-exam-vouchers" element={<AzureBlogDetails/>} />
+
+            <Route path='/blog/aws-exam-vouchers' element={<AwsBlogDetails/>} />
+            <Route path="/blog/databricks-exam-vouchers" element={<DatabricksVouchers/>} />
+            <Route path="/blog/comptia-exam-vouchers" element={<ComptiaVouchers/>} />
+            <Route path="/blog/fortinet-exam-vouchers" element={<FortinetVouchers/>} />
+            <Route path="/blog/google-cloud-exam-vouchers" element={<GoogleCloudVouchers/>} />
           </Route>
         </Routes>
       </Suspense>
