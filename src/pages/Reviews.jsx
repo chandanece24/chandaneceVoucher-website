@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaSearch, FaWhatsapp, FaEnvelope, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ReviewSystem from '../components/ReviewSystem';
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
-import {Helmet} from "react-helmet-async"
+import SEO from  "../components/SEO"
 const Reviews = () => {
 
     const breadcrumbItems = [
@@ -54,11 +54,11 @@ const Reviews = () => {
   return (
     <>
 
-      <Helmet>
-        <title>Customer Reviews - Techcyfy</title>
-        <meta name="description" content="Read what our customers say about Techcyfy. Share your experience and help others choose the best IT certification vouchers." />
-        <link rel="canonical" href="https://teckey.netlify.app/reviews" />
-      </Helmet>
+      <SEO
+        title="Customer Reviews - Techcyfy"
+        description="Read what our customers say about Techcyfy. Share your experience and help others choose the best IT certification vouchers."
+        canonicalUrl="https://teckey.netlify.app/reviews"
+      />
 
       <BreadcrumbSchema items={breadcrumbItems} />
       <ReviewSystem />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import SEO from "../components/SEO"
 const AwsVouchers = () => {
   const [activeCert, setActiveCert] = useState(null);
 
@@ -406,325 +406,335 @@ const AwsVouchers = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Header */}
-        <header className="border-b border-gray-200 pb-6 mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            AWS Certification Exam Vouchers 2026
-          </h1>
-          <p className="text-gray-600 mt-2 text-lg">
-            Complete AWS Exam List, Codes, Costs &amp; Certification Guide
-          </p>
-          <p className="text-sm text-gray-500 mt-3">
-            <span className="font-medium">Looking for AWS certification exam vouchers at competitive prices?</span>{' '}
-            Techcyfy helps IT professionals, cloud engineers, developers, architects, DevOps professionals, data engineers,
-            cybersecurity specialists, and technology students explore AWS certification exam voucher options for globally
-            recognized AWS certifications.
-          </p>
-          <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
-            <span className="font-semibold">⚠️ 2026 Update:</span> AWS is currently updating several certification exams.
-            Candidates should verify the exact exam code and availability before purchasing or scheduling an exam. AWS has
-            announced updates to <strong>MLA-C02, SAP-C03, and DVA-C03</strong>.
-          </div>
-        </header>
 
-        {/* Quick Reference: All Exam Codes */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">AWS Certification Exam Codes at a Glance</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
-            {certifications.map((cert) => (
-              <div key={cert.id} className="flex items-center gap-2 text-sm">
-                <span className="font-mono font-bold text-blue-600">{cert.code}</span>
-                <span className="text-gray-400">—</span>
-                <span className="text-gray-700 truncate">{cert.name.replace('AWS Certified ', '')}</span>
-                <span
-                  className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${
-                    cert.level === 'Foundational'
+
+    <>
+      <SEO
+        title="AWS Exam Vouchers"
+        description="Learn about AWS certification exam vouchers, available AWS exams, voucher options and certification resources."
+        keywords="AWS exam voucher, AWS certification voucher, AWS voucher price, AWS certification"
+        canonicalUrl="https://techcyfy.com/blog/aws-exam-vouchers"
+      />
+      <div className="min-h-screen bg-white text-gray-800 font-sans">
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          {/* Header */}
+          <header className="border-b border-gray-200 pb-6 mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h1>
+                AWS Exam Vouchers: Complete Guide to Discounted AWS Certification Vouchers
+              </h1>
+            </h1>
+            <p className="text-gray-600 mt-2 text-lg">
+              Complete AWS Exam List, Codes, Costs &amp; Certification Guide
+            </p>
+            <p className="text-sm text-gray-500 mt-3">
+              <span className="font-medium">Looking for AWS certification exam vouchers at competitive prices?</span>{' '}
+              Techcyfy helps IT professionals, cloud engineers, developers, architects, DevOps professionals, data engineers,
+              cybersecurity specialists, and technology students explore AWS certification exam voucher options for globally
+              recognized AWS certifications.
+            </p>
+            <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+              <span className="font-semibold">⚠️ 2026 Update:</span> AWS is currently updating several certification exams.
+              Candidates should verify the exact exam code and availability before purchasing or scheduling an exam. AWS has
+              announced updates to <strong>MLA-C02, SAP-C03, and DVA-C03</strong>.
+            </div>
+          </header>
+
+          {/* Quick Reference: All Exam Codes */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">AWS Certification Exam Codes at a Glance</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
+              {certifications.map((cert) => (
+                <div key={cert.id} className="flex items-center gap-2 text-sm">
+                  <span className="font-mono font-bold text-blue-600">{cert.code}</span>
+                  <span className="text-gray-400">—</span>
+                  <span className="text-gray-700 truncate">{cert.name.replace('AWS Certified ', '')}</span>
+                  <span
+                    className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${cert.level === 'Foundational'
                       ? 'bg-blue-100 text-blue-700'
                       : cert.level === 'Associate'
-                      ? 'bg-green-100 text-green-700'
-                      : cert.level === 'Professional'
-                      ? 'bg-purple-100 text-purple-700'
-                      : 'bg-orange-100 text-orange-700'
-                  }`}
-                >
-                  {cert.level}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Career Recommendation Table */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Which AWS Certification Should You Choose?</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">Career Goal</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">Recommended AWS Certification</th>
-                </tr>
-              </thead>
-              <tbody>
-                {careerRecommendations.map((item, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="border border-gray-300 px-4 py-2">{item.goal}</td>
-                    <td className="border border-gray-300 px-4 py-2 font-medium text-blue-700">{item.cert}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* Certification Cards */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">All AWS Certifications</h2>
-          <div className="space-y-4">
-            {certifications.map((cert) => (
-              <div
-                key={cert.id}
-                className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
-              >
-                <div
-                  className="flex flex-wrap items-start justify-between cursor-pointer"
-                  onClick={() => setActiveCert(activeCert === cert.id ? null : cert.id)}
-                >
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="text-xl font-bold text-gray-900">{cert.name}</h3>
-                      <span className="font-mono text-blue-600 text-sm font-semibold">{cert.code}</span>
-                      <span
-                        className={`text-xs px-2 py-0.5 rounded-full ${
-                          cert.level === 'Foundational'
-                            ? 'bg-blue-100 text-blue-700'
-                            : cert.level === 'Associate'
-                            ? 'bg-green-100 text-green-700'
-                            : cert.level === 'Professional'
-                            ? 'bg-purple-100 text-purple-700'
-                            : 'bg-orange-100 text-orange-700'
-                        }`}
-                      >
-                        {cert.level}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap gap-3 mt-1 text-sm text-gray-600">
-                      {cert.fee && <span>Fee: {cert.fee}</span>}
-                      {cert.duration && <span>Duration: {cert.duration}</span>}
-                    </div>
-                  </div>
-                  <span className="text-gray-400 text-sm mt-1">
-                    {activeCert === cert.id ? '▼' : '▶'}
+                        ? 'bg-green-100 text-green-700'
+                        : cert.level === 'Professional'
+                          ? 'bg-purple-100 text-purple-700'
+                          : 'bg-orange-100 text-orange-700'
+                      }`}
+                  >
+                    {cert.level}
                   </span>
                 </div>
+              ))}
+            </div>
+          </section>
 
-                {activeCert === cert.id && (
-                  <div className="mt-4 pt-4 border-t border-gray-100 space-y-3">
-                    <p className="text-gray-700">{cert.description}</p>
+          {/* Career Recommendation Table */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Which AWS Certification Should You Choose?</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">Career Goal</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">Recommended AWS Certification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {careerRecommendations.map((item, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <td className="border border-gray-300 px-4 py-2">{item.goal}</td>
+                      <td className="border border-gray-300 px-4 py-2 font-medium text-blue-700">{item.cert}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-                    {cert.domains && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Exam Domains:</h4>
-                        {typeof cert.domains[0] === 'string' ? (
+          {/* Certification Cards */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">All AWS Certifications</h2>
+            <div className="space-y-4">
+              {certifications.map((cert) => (
+                <div
+                  key={cert.id}
+                  className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+                >
+                  <div
+                    className="flex flex-wrap items-start justify-between cursor-pointer"
+                    onClick={() => setActiveCert(activeCert === cert.id ? null : cert.id)}
+                  >
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-xl font-bold text-gray-900">{cert.name}</h3>
+                        <span className="font-mono text-blue-600 text-sm font-semibold">{cert.code}</span>
+                        <span
+                          className={`text-xs px-2 py-0.5 rounded-full ${cert.level === 'Foundational'
+                            ? 'bg-blue-100 text-blue-700'
+                            : cert.level === 'Associate'
+                              ? 'bg-green-100 text-green-700'
+                              : cert.level === 'Professional'
+                                ? 'bg-purple-100 text-purple-700'
+                                : 'bg-orange-100 text-orange-700'
+                            }`}
+                        >
+                          {cert.level}
+                        </span>
+                      </div>
+                      <div className="flex flex-wrap gap-3 mt-1 text-sm text-gray-600">
+                        {cert.fee && <span>Fee: {cert.fee}</span>}
+                        {cert.duration && <span>Duration: {cert.duration}</span>}
+                      </div>
+                    </div>
+                    <span className="text-gray-400 text-sm mt-1">
+                      {activeCert === cert.id ? '▼' : '▶'}
+                    </span>
+                  </div>
+
+                  {activeCert === cert.id && (
+                    <div className="mt-4 pt-4 border-t border-gray-100 space-y-3">
+                      <p className="text-gray-700">{cert.description}</p>
+
+                      {cert.domains && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Exam Domains:</h4>
+                          {typeof cert.domains[0] === 'string' ? (
+                            <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+                              {cert.domains.map((domain, i) => (
+                                <li key={i}>{domain}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+                              {cert.domains.map((domain, i) => (
+                                <li key={i}>
+                                  {domain.name} — <span className="font-medium">{domain.weight}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      )}
+
+                      {cert.topics && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Key Topics:</h4>
                           <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                            {cert.domains.map((domain, i) => (
-                              <li key={i}>{domain}</li>
+                            {cert.topics.map((topic, i) => (
+                              <li key={i}>{topic}</li>
                             ))}
                           </ul>
-                        ) : (
+                        </div>
+                      )}
+
+                      {cert.suitable && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Recommended for:</h4>
                           <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                            {cert.domains.map((domain, i) => (
-                              <li key={i}>
-                                {domain.name} — <span className="font-medium">{domain.weight}</span>
-                              </li>
+                            {cert.suitable.map((item, i) => (
+                              <li key={i}>{item}</li>
                             ))}
                           </ul>
-                        )}
-                      </div>
-                    )}
+                        </div>
+                      )}
 
-                    {cert.topics && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Key Topics:</h4>
-                        <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                          {cert.topics.map((topic, i) => (
-                            <li key={i}>{topic}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      {cert.pathway && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Career Pathway:</h4>
+                          <p className="text-sm text-gray-600 font-mono bg-gray-50 px-3 py-1 rounded inline-block">
+                            {cert.pathway}
+                          </p>
+                        </div>
+                      )}
 
-                    {cert.suitable && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Recommended for:</h4>
-                        <ul className="list-disc list-inside text-sm text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                          {cert.suitable.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      {cert.dates && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Important Dates:</h4>
+                          <div className="text-sm text-gray-600 space-y-1">
+                            <p>• Registration opens: <strong>{cert.dates.registration}</strong></p>
+                            <p>• Last day for current exam: <strong>{cert.dates.lastDay}</strong></p>
+                            <p>• New exam GA: <strong>{cert.dates.ga}</strong></p>
+                          </div>
+                        </div>
+                      )}
 
-                    {cert.pathway && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Career Pathway:</h4>
-                        <p className="text-sm text-gray-600 font-mono bg-gray-50 px-3 py-1 rounded inline-block">
-                          {cert.pathway}
+                      {cert.beta && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">Beta Information:</h4>
+                          <div className="text-sm text-gray-600 space-y-1">
+                            <p>• Beta Exam Code: <strong className="font-mono">{cert.beta.code}</strong></p>
+                            <p>• Beta Fee: <strong>{cert.beta.fee}</strong></p>
+                            <p>• Beta Duration: <strong>{cert.beta.duration}</strong></p>
+                            <p>• Beta Questions: <strong>{cert.beta.questions}</strong></p>
+                          </div>
+                        </div>
+                      )}
+
+                      {cert.note && (
+                        <p className="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded border border-blue-200">
+                          ℹ️ {cert.note}
+                        </p>
+                      )}
+
+                      <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
+                        <p className="text-sm text-gray-600">
+                          <span className="font-medium">Looking for a {cert.code} voucher?</span>{' '}
+                          Contact Techcyfy to check current discounted voucher availability.
                         </p>
                       </div>
-                    )}
-
-                    {cert.dates && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Important Dates:</h4>
-                        <div className="text-sm text-gray-600 space-y-1">
-                          <p>• Registration opens: <strong>{cert.dates.registration}</strong></p>
-                          <p>• Last day for current exam: <strong>{cert.dates.lastDay}</strong></p>
-                          <p>• New exam GA: <strong>{cert.dates.ga}</strong></p>
-                        </div>
-                      </div>
-                    )}
-
-                    {cert.beta && (
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">Beta Information:</h4>
-                        <div className="text-sm text-gray-600 space-y-1">
-                          <p>• Beta Exam Code: <strong className="font-mono">{cert.beta.code}</strong></p>
-                          <p>• Beta Fee: <strong>{cert.beta.fee}</strong></p>
-                          <p>• Beta Duration: <strong>{cert.beta.duration}</strong></p>
-                          <p>• Beta Questions: <strong>{cert.beta.questions}</strong></p>
-                        </div>
-                      </div>
-                    )}
-
-                    {cert.note && (
-                      <p className="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded border border-blue-200">
-                        ℹ️ {cert.note}
-                      </p>
-                    )}
-
-                    <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
-                      <p className="text-sm text-gray-600">
-                        <span className="font-medium">Looking for a {cert.code} voucher?</span>{' '}
-                        Contact Techcyfy to check current discounted voucher availability.
-                      </p>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Voucher Guide */}
-        <section className="mb-10 bg-gray-50 p-6 rounded-lg border border-gray-200">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-3">What Is an AWS Exam Voucher?</h2>
-          <p className="text-gray-700 mb-3">
-            An <strong>AWS exam voucher</strong> is a payment voucher that can be used toward an eligible AWS Certification
-            exam according to the voucher's terms and conditions.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Certification name</li>
-              <li>Exam code</li>
-              <li>Current exam version</li>
-              <li>Voucher validity</li>
-              <li>Country/region restrictions</li>
+          {/* Voucher Guide */}
+          <section className="mb-10 bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">What Is an AWS Exam Voucher?</h2>
+            <p className="text-gray-700 mb-3">
+              An <strong>AWS exam voucher</strong> is a payment voucher that can be used toward an eligible AWS Certification
+              exam according to the voucher's terms and conditions.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>Certification name</li>
+                <li>Exam code</li>
+                <li>Current exam version</li>
+                <li>Voucher validity</li>
+                <li>Country/region restrictions</li>
+              </ul>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>Redemption conditions</li>
+                <li>Exam delivery options</li>
+                <li>Testing availability</li>
+                <li>Expiration date</li>
+              </ul>
+            </div>
+            <p className="text-sm text-gray-500 mt-3">
+              AWS also provides an official exam-voucher system for organizations and teams, including online purchasing and
+              voucher management.
+            </p>
+          </section>
+
+          {/* Why Techcyfy */}
+          <section className="mb-10 border border-gray-200 rounded-lg p-6 bg-white">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">Why Choose Techcyfy for AWS Exam Vouchers?</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700">
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold">✓</span> Competitive AWS Voucher Pricing
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold">✓</span> Multiple AWS Certifications – Cloud Practitioner, Solutions Architect, Developer, Security, DevOps, AI &amp; more
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold">✓</span> Easy Ordering – Tell Techcyfy the certification name and exam code
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold">✓</span> Professional Assistance – Get guidance on certification pathways
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold">✓</span> Exam-Code Verification – AWS periodically updates exam versions
+              </li>
             </ul>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Redemption conditions</li>
-              <li>Exam delivery options</li>
-              <li>Testing availability</li>
-              <li>Expiration date</li>
-            </ul>
-          </div>
-          <p className="text-sm text-gray-500 mt-3">
-            AWS also provides an official exam-voucher system for organizations and teams, including online purchasing and
-            voucher management.
-          </p>
-        </section>
+          </section>
 
-        {/* Why Techcyfy */}
-        <section className="mb-10 border border-gray-200 rounded-lg p-6 bg-white">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Why Choose Techcyfy for AWS Exam Vouchers?</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700">
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span> Competitive AWS Voucher Pricing
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span> Multiple AWS Certifications – Cloud Practitioner, Solutions Architect, Developer, Security, DevOps, AI &amp; more
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span> Easy Ordering – Tell Techcyfy the certification name and exam code
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span> Professional Assistance – Get guidance on certification pathways
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span> Exam-Code Verification – AWS periodically updates exam versions
-            </li>
-          </ul>
-        </section>
+          {/* Steps to Buy */}
+          <section className="mb-10 bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">How to Buy an AWS Certification Exam Voucher</h2>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+              <li>
+                <span className="font-medium">Select Your AWS Certification</span> – Choose the certification that matches your career goal (e.g., AWS Certified Security – Specialty).
+              </li>
+              <li>
+                <span className="font-medium">Confirm the Exam Code</span> – Verify the current exam code (e.g., SCS-C03).
+              </li>
+              <li>
+                <span className="font-medium">Contact Techcyfy</span> – Provide the AWS certification name and exam code.
+              </li>
+              <li>
+                <span className="font-medium">Confirm Voucher Details</span> – Verify price, validity, redemption terms, certification, exam code, region, and delivery method.
+              </li>
+              <li>
+                <span className="font-medium">Schedule Your AWS Exam</span> – After receiving an eligible voucher, follow the applicable AWS Certification process to redeem the voucher and schedule your exam.
+              </li>
+            </ol>
+          </section>
 
-        {/* Steps to Buy */}
-        <section className="mb-10 bg-gray-50 p-6 rounded-lg border border-gray-200">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-3">How to Buy an AWS Certification Exam Voucher</h2>
-          <ol className="list-decimal list-inside space-y-2 text-gray-700">
-            <li>
-              <span className="font-medium">Select Your AWS Certification</span> – Choose the certification that matches your career goal (e.g., AWS Certified Security – Specialty).
-            </li>
-            <li>
-              <span className="font-medium">Confirm the Exam Code</span> – Verify the current exam code (e.g., SCS-C03).
-            </li>
-            <li>
-              <span className="font-medium">Contact Techcyfy</span> – Provide the AWS certification name and exam code.
-            </li>
-            <li>
-              <span className="font-medium">Confirm Voucher Details</span> – Verify price, validity, redemption terms, certification, exam code, region, and delivery method.
-            </li>
-            <li>
-              <span className="font-medium">Schedule Your AWS Exam</span> – After receiving an eligible voucher, follow the applicable AWS Certification process to redeem the voucher and schedule your exam.
-            </li>
-          </ol>
-        </section>
+          {/* FAQ */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Frequently Asked Questions About AWS Certification Exams</h2>
+            <div className="space-y-3">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-lg p-4 bg-white">
+                  <h4 className="font-semibold text-gray-800">{faq.q}</h4>
+                  <p className="text-gray-600 text-sm mt-1">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* FAQ */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Frequently Asked Questions About AWS Certification Exams</h2>
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-gray-200 rounded-lg p-4 bg-white">
-                <h4 className="font-semibold text-gray-800">{faq.q}</h4>
-                <p className="text-gray-600 text-sm mt-1">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <footer className="border-t border-gray-200 pt-6 text-center">
-          <h2 className="text-xl font-bold text-gray-900">Ready to Take Your AWS Certification Exam?</h2>
-          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-            Whether you're starting your cloud journey with <strong>AWS Certified Cloud Practitioner</strong>, building
-            architecture skills with <strong>SAA-C03</strong>, developing cloud applications with{' '}
-            <strong>DVA-C02/DVA-C03</strong>, advancing into DevOps with <strong>DOP-C02</strong>, specializing in
-            security with <strong>SCS-C03</strong>, or developing expertise in AI and machine learning, Techcyfy can help
-            you explore available AWS exam voucher options.
-          </p>
-          <p className="text-gray-700 mt-4 font-medium">
-            Choose your AWS certification, verify the current exam code, and contact Techcyfy for the latest voucher
-            availability and pricing.
-          </p>
-          <p className="text-sm text-gray-500 mt-6">
-            Techcyfy — Your Certification Voucher Partner
-            <br />
-            <span className="italic">Explore. Prepare. Certify.</span>
-          </p>
-        </footer>
+          {/* Final CTA */}
+          <footer className="border-t border-gray-200 pt-6 text-center">
+            <h2 className="text-xl font-bold text-gray-900">Ready to Take Your AWS Certification Exam?</h2>
+            <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+              Whether you're starting your cloud journey with <strong>AWS Certified Cloud Practitioner</strong>, building
+              architecture skills with <strong>SAA-C03</strong>, developing cloud applications with{' '}
+              <strong>DVA-C02/DVA-C03</strong>, advancing into DevOps with <strong>DOP-C02</strong>, specializing in
+              security with <strong>SCS-C03</strong>, or developing expertise in AI and machine learning, Techcyfy can help
+              you explore available AWS exam voucher options.
+            </p>
+            <p className="text-gray-700 mt-4 font-medium">
+              Choose your AWS certification, verify the current exam code, and contact Techcyfy for the latest voucher
+              availability and pricing.
+            </p>
+            <p className="text-sm text-gray-500 mt-6">
+              Techcyfy — Your Certification Voucher Partner
+              <br />
+              <span className="italic">Explore. Prepare. Certify.</span>
+            </p>
+          </footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

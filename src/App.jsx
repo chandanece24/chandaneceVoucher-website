@@ -1,83 +1,166 @@
-// App.jsx
-import React, { Suspense, lazy, useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom"; // Router সরানো হয়েছে
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+// Layout & Loading
 import Layout from "./components/Layout";
-import LoadingSpinner from "./components/LoadingSpinner";
-import RouteLoading from "./components/RouteLoading"; // ✅ যোগ করা হয়েছে
-import Blog from "./pages/Blog";
-//import Vouchers from "./pages/Vouchers"; // ✅ Vouchers পেজ
+import RouteLoading from "./components/RouteLoading";
+
+// Main Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 import Reviews from "./pages/Reviews";
-import HowItWorks from "./components/HowItWorks"; // ✅ HowItWorks পেজ
+import Blog from "./pages/Blog";
+
+// Other Pages / Components
+import HowItWorks from "./components/HowItWorks";
 import VoucherSection from "./components/VoucherSection";
-// import VoucherCard from "./components/VoucherCard"; // ❌ সরানো হয়েছে (ব্যবহার নেই)
-// import VoucherSection from "./components/VoucherSection"; // ❌ সরানো হয়েছে (পেজ ব্যবহার করছি)
-import VoucherDetails from "./pages/VaoucherDetails"
+import VoucherDetails from "./pages/VaoucherDetails";
 import ExamList from "./pages/ExamList";
+
+// Blog Pages
+import AzureBlogDetails from "./Blog/AzureBlogDetails";
 import AwsBlogDetails from "./Blog/AwsBlogDetails";
 import DatabricksVouchers from "./Blog/DatabricksVouchers";
 import ComptiaVouchers from "./Blog/ComptiaVouchers";
 import FortinetVouchers from "./Blog/FortinetVouchers";
 import GoogleCloudVouchers from "./Blog/GoogleCloudVoucher";
-import AzureBlogDetails from "./Blog/AzureBlogDetails"
-// Lazy load pages (code splitting)
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Contact = lazy(() => import("./pages/Contact"));
-
+import SalesforceVouchers from "./Blog/SalesforceCRM";
+import HashiCorpTerraformCertification from "./Blog/HashiCorpTerraformCertification";
+import ClaudeCertification from "./Blog/ClaudeCetfification";
 function App() {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Route change loading state
   const [isRouteLoading, setIsRouteLoading] = useState(false);
 
-  // Initial Loading
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Route Change Loading
   useEffect(() => {
     setIsRouteLoading(true);
+
     const timer = setTimeout(() => {
       setIsRouteLoading(false);
-    }, 400);
+    }, 300);
+
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-
   return (
     <>
+      {/* Small loading indicator during route changes */}
       {isRouteLoading && <RouteLoading />}
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
 
-            <Route path="how-it-works" element={<HowItWorks />} />
-            <Route path="vouchers" element={<VoucherSection />} /> {/* ✅ Vouchers পেজ */}
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="services" element={<Services />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="vouchers/:id" element={<VoucherDetails />} />
-            <Route path="vouchers/:id/exams" element={<ExamList />} />
+      <Routes>
+        {/* ==============================
+            MAIN WEBSITE LAYOUT
+        ============================== */}
+        <Route path="/" element={<Layout />}>
 
-            <Route path="blog/microsoft-azure-exam-vouchers" element={<AzureBlogDetails/>} />
+          {/* Homepage */}
+          <Route index element={<Home />} />
 
-            <Route path='/blog/aws-exam-vouchers' element={<AwsBlogDetails/>} />
-            <Route path="/blog/databricks-exam-vouchers" element={<DatabricksVouchers/>} />
-            <Route path="/blog/comptia-exam-vouchers" element={<ComptiaVouchers/>} />
-            <Route path="/blog/fortinet-exam-vouchers" element={<FortinetVouchers/>} />
-            <Route path="/blog/google-cloud-exam-vouchers" element={<GoogleCloudVouchers/>} />
-          </Route>
-        </Routes>
-      </Suspense>
+          {/* Main Pages */}
+          <Route
+            path="about"
+            element={<About />}
+          />
+
+          <Route
+            path="how-it-works"
+            element={<HowItWorks />}
+          />
+
+          <Route
+            path="vouchers"
+            element={<VoucherSection />}
+          />
+
+          <Route
+            path="reviews"
+            element={<Reviews />}
+          />
+
+          <Route
+            path="services"
+            element={<Services />}
+          />
+
+          <Route
+            path="contact"
+            element={<Contact />}
+          />
+
+          {/* ==============================
+              VOUCHER ROUTES
+          ============================== */}
+
+          <Route
+            path="vouchers/:id"
+            element={<VoucherDetails />}
+          />
+
+          <Route
+            path="vouchers/:id/exams"
+            element={<ExamList />}
+          />
+
+          {/* ==============================
+              BLOG MAIN PAGE
+          ============================== */}
+
+          <Route
+            path="blog"
+            element={<Blog />}
+          />
+
+          {/* ==============================
+              BLOG DETAIL PAGES
+          ============================== */}
+
+          <Route
+            path="blog/microsoft-azure-exam-vouchers"
+            element={<AzureBlogDetails />}
+          />
+
+          <Route
+            path="blog/aws-exam-vouchers"
+            element={<AwsBlogDetails />}
+          />
+
+          <Route
+            path="blog/databricks-exam-vouchers"
+            element={<DatabricksVouchers />}
+          />
+
+          <Route
+            path="blog/salesforce-exam-vouchers"
+            element={<SalesforceVouchers />} />
+
+          <Route
+            path="blog/comptia-exam-vouchers"
+            element={<ComptiaVouchers />}
+          />
+
+          <Route
+            path="blog/fortinet-exam-vouchers"
+            element={<FortinetVouchers />}
+          />
+
+          <Route
+            path="blog/google-cloud-exam-vouchers"
+            element={<GoogleCloudVouchers />}
+          />
+          <Route
+            path="blog/hashicorp-exam-vouchers"
+            element={<HashiCorpTerraformCertification />} />
+
+          <Route
+            path="blog/ClaudeCertification-vouchers"
+            element={<ClaudeCertification />} />
+        </Route>
+
+
+      </Routes>
     </>
   );
 }

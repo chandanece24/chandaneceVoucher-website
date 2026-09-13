@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import VoucherCard from "./VoucherCard";
-
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO"
 import { vouchersData } from "../data/Vouchers";
 import ProductSchema from "./ProductSchema";
 import BreadcrumbSchema from "./BreadcrumbSchema";
@@ -53,27 +52,14 @@ const VoucherSection = () => {
 
   return (
     <>
-      <Helmet>
-        <title>IT Certification Exam Vouchers - Techcyfy</title>
-        <meta
-          name="description"
-          content="Browse all IT certification exam vouchers. Get genuine vouchers for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat at discounted prices."
-        />
-        <meta
-          name="keywords"
-          content="exam vouchers, IT certification, AWS voucher, Microsoft voucher, CompTIA voucher, Cisco voucher"
-        />
-        <link rel="canonical" href="https://techcyfy.com/vouchers" />
+      <SEO
+        title="IT Certification Exam Vouchers"
+        description="Explore discounted IT certification exam vouchers from AWS, Microsoft Azure, Google Cloud, CompTIA, Cisco, Fortinet and more."
+        keywords="IT exam vouchers, certification vouchers, AWS, Azure, GCP, CompTIA, Cisco, Fortinet"
+        canonicalUrl="https://techcyfy.com/vouchers"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="IT Certification Exam Vouchers - Techcyfy" />
-        <meta
-          property="og:description"
-          content="Browse all IT certification exam vouchers with up to 70% discount. Instant delivery."
-        />
-        <meta property="og:url" content="https://techcyfy.com/vouchers" />
-        <meta property="og:type" content="website" />
-      </Helmet>
+
 
       <BreadcrumbSchema items={breadcrumbItems} />
 
@@ -93,8 +79,13 @@ const VoucherSection = () => {
                 </span>
                 <div className="h-px flex-1 bg-gradient-to-r from-sky-400/30 to-transparent"></div>
               </div>
-              <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight">
-                {showAll ? "All Exam Vouchers" : "Popular Exam Vouchers"}
+              <h2
+                id="vouchers-heading"
+                className="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight"
+              >
+                {showAll
+                  ? "All IT Certification Exam Vouchers"
+                  : "Popular IT Certification Exam Vouchers"}
               </h2>
               <p className="text-[10px] sm:text-xs md:text-sm text-slate-400 mt-0.5">
                 {showAll
@@ -111,9 +102,8 @@ const VoucherSection = () => {
             >
               {showAll ? "Show Popular" : "View All"}
               <FaArrowRight
-                className={`text-[8px] sm:text-[10px] transition-transform duration-300 ${
-                  showAll ? "rotate-180" : ""
-                }`}
+                className={`text-[8px] sm:text-[10px] transition-transform duration-300 ${showAll ? "rotate-180" : ""
+                  }`}
               />
             </motion.button>
           </div>

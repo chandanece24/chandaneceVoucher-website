@@ -402,7 +402,8 @@ const GoogleCloudVouchers = () => {
         {/* Header */}
         <header className="border-b border-gray-200 pb-6 mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Google Cloud Certification Exam Vouchers 2026
+            Google Cloud Exam Vouchers: Complete Guide to Discounted Google Cloud Certification Vouchers
+
           </h1>
           <p className="text-gray-600 mt-2 text-lg">
             Complete Exam List, Certification Guide &amp; Discounted Vouchers
@@ -428,13 +429,12 @@ const GoogleCloudVouchers = () => {
               <div key={cert.id} className="flex items-center gap-2 text-sm">
                 <span className="text-gray-700 truncate">{cert.name}</span>
                 <span
-                  className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${
-                    cert.level === 'Foundational'
+                  className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${cert.level === 'Foundational'
                       ? 'bg-blue-100 text-blue-700'
                       : cert.level === 'Associate'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-purple-100 text-purple-700'
-                  }`}
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-purple-100 text-purple-700'
+                    }`}
                 >
                   {cert.level}
                 </span>
@@ -489,13 +489,12 @@ const GoogleCloudVouchers = () => {
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="text-xl font-bold text-gray-900">{cert.name}</h3>
                       <span
-                        className={`text-xs px-2 py-0.5 rounded-full ${
-                          cert.level === 'Foundational'
+                        className={`text-xs px-2 py-0.5 rounded-full ${cert.level === 'Foundational'
                             ? 'bg-blue-100 text-blue-700'
                             : cert.level === 'Associate'
-                            ? 'bg-green-100 text-green-700'
-                            : 'bg-purple-100 text-purple-700'
-                        }`}
+                              ? 'bg-green-100 text-green-700'
+                              : 'bg-purple-100 text-purple-700'
+                          }`}
                       >
                         {cert.level}
                       </span>

@@ -233,7 +233,7 @@ const DatabricksVouchers = () => {
         {/* Header */}
         <header className="border-b border-gray-200 pb-6 mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Databricks Certification Exam Vouchers 2026
+            Databricks Exam Vouchers: Complete Guide to Discounted Databricks Certification Vouchers
           </h1>
           <p className="text-gray-600 mt-2 text-lg">
             Complete Certification List, Exam Guide &amp; Discounted Vouchers

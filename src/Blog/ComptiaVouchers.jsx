@@ -431,7 +431,7 @@ const ComptiaVouchers = () => {
         {/* Header */}
         <header className="border-b border-gray-200 pb-6 mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            CompTIA Certification Exam Vouchers 2026
+            CompTIA Exam Vouchers: Complete Guide to Discounted CompTIA Certification Vouchers
           </h1>
           <p className="text-gray-600 mt-2 text-lg">
             Complete Exam List, Codes, Prices &amp; Certification Guide

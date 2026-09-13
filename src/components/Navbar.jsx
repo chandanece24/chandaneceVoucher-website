@@ -16,6 +16,7 @@ import {
   FaShieldAlt,
   FaCheckCircle,
   FaChevronDown,
+  FaEnvelope,
 } from "react-icons/fa";
 
 import tclogo from "../assets/tclogo.png";
@@ -46,15 +47,26 @@ const Navbar = () => {
 
   // Navigation links
   const navLinks = [
+
     {
       name: "Home",
       path: "/",
       icon: <FaHome className="text-sm" />,
     },
     {
+      name: "Exam Vouchers",
+      path: "/vouchers",
+      icon: <FaTicketAlt className="text-sm" />,
+    },
+    {
       name: "About",
       path: "/about",
       icon: <FaInfoCircle className="text-sm" />,
+    },
+     {
+      name: "Reviews",
+      path: "/reviews",
+      icon: <FaStar className="text-sm" />,
     },
     {
       name: "How It Works",
@@ -62,15 +74,12 @@ const Navbar = () => {
       icon: <FaClipboardList className="text-sm" />,
     },
     {
-      name: "Vouchers",
-      path: "/vouchers",
-      icon: <FaTicketAlt className="text-sm" />,
-    },
-    {
-      name: "Reviews",
-      path: "/reviews",
-      icon: <FaStar className="text-sm" />,
-    },
+      name:"Contact",
+      path:"/contact",
+      icon:<FaEnvelope className="text-sm"/>
+    }
+
+   
   ];
 
   // Blog categories
@@ -99,14 +108,28 @@ const Navbar = () => {
       name: "CompTIA",
       path: "/blog/comptia-exam-vouchers",
     },
+    {
+      name:"Salesforce",
+      path:"/blog/salesforce-exam-vouchers"
+    }
+    ,
+    {
+      name:"hashicorp terraform certification",
+      path:"/blog/hashicorp-exam-vouchers"
+    }
+    ,
+    {
+      name:"Claude Certification",
+      path:"/blog/ClaudeCertification-vouchers"
+    }
   ];
 
   return (
     <>
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-            ? "bg-black/95 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border-b border-slate-800/50"
-            : "bg-black/80 backdrop-blur-md border-b border-slate-800/30"
+          ? "bg-black/95 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border-b border-slate-800/50"
+          : "bg-black/80 backdrop-blur-md border-b border-slate-800/30"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,11 +204,10 @@ const Navbar = () => {
                 onMouseLeave={() => setBlogOpen(false)}
               >
                 <div
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg cursor-default transition-all duration-300 ${
-                    location.pathname.startsWith("/blog")
-                      ? "text-white bg-sky-500/10 border border-sky-500/30"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg cursor-default transition-all duration-300 ${location.pathname.startsWith("/blog")
+                    ? "text-white bg-sky-500/10 border border-sky-500/30"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    }`}
                 >
                   <FaBookOpen
                     className={
@@ -196,9 +218,8 @@ const Navbar = () => {
                   />
                   <span className="text-sm font-medium">Blog</span>
                   <FaChevronDown
-                    className={`text-xs transition-transform duration-300 ${
-                      blogOpen ? "rotate-180" : ""
-                    }`}
+                    className={`text-xs transition-transform duration-300 ${blogOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </div>
 
@@ -240,21 +261,19 @@ const Navbar = () => {
                             key={category.name}
                             to={category.path}
                             className={({ isActive }) =>
-                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
-                                isActive
-                                  ? "bg-sky-100 text-sky-700 border border-sky-200"
-                                  : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
+                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${isActive
+                                ? "bg-sky-100 text-sky-700 border border-sky-200"
+                                : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
                               }`
                             }
                           >
                             {({ isActive }) => (
                               <>
                                 <span
-                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                                    isActive
-                                      ? "bg-sky-500 scale-125"
-                                      : "bg-sky-400"
-                                  }`}
+                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${isActive
+                                    ? "bg-sky-500 scale-125"
+                                    : "bg-sky-400"
+                                    }`}
                                 />
                                 <span className="font-medium">{category.name}</span>
                                 {isActive && (
@@ -412,8 +431,8 @@ const Navbar = () => {
                   <button
                     onClick={() => setBlogOpen(!blogOpen)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${location.pathname.startsWith("/blog")
-                        ? "bg-sky-500/10 border border-sky-500/30 text-white"
-                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                      ? "bg-sky-500/10 border border-sky-500/30 text-white"
+                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
                       }`}
                   >
                     <span
@@ -458,21 +477,19 @@ const Navbar = () => {
                             key={category.name}
                             to={category.path}
                             className={({ isActive }) =>
-                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 bg-white ${
-                                isActive
-                                  ? "text-sky-700 bg-sky-100 border border-sky-200"
-                                  : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
+                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 bg-white ${isActive
+                                ? "text-sky-700 bg-sky-100 border border-sky-200"
+                                : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
                               }`
                             }
                           >
                             {({ isActive }) => (
                               <>
                                 <span
-                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                                    isActive
-                                      ? "bg-sky-500 scale-125"
-                                      : "bg-sky-400"
-                                  }`}
+                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${isActive
+                                    ? "bg-sky-500 scale-125"
+                                    : "bg-sky-400"
+                                    }`}
                                 />
                                 <span className="font-medium">{category.name}</span>
                                 {isActive && (

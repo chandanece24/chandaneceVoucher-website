@@ -1,11 +1,11 @@
 // src/pages/About.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaExternalLinkAlt, FaShieldAlt, FaCheckCircle } from "react-icons/fa";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
-
+import SEO from "../components/SEO";
 const About = () => {
   const breadcrumbItems = [
     { name: "Home", url: "/" },
@@ -18,17 +18,18 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>About Techcyfy - Your Trusted IT Certification Partner</title>
-        <meta name="description" content="Techcyfy provides genuine IT certification exam vouchers at discounted prices. Trusted by professionals worldwide. Learn more about us." />
-        <link rel="canonical" href="https://techcyfy.com/about" />
-      </Helmet>
+      <SEO
+        title="About TECHCYFY"
+        description="Learn about TECHCYFY, an international provider of genuine and discounted IT certification exam vouchers."
+        keywords="about Techcyfy, IT certification vouchers, exam voucher provider"
+        canonicalUrl="https://techcyfy.com/about"
+      />
 
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <section className="py-12 md:py-20 px-4 bg-slate-950 text-white min-h-screen">
         <div className="max-w-5xl mx-auto">
-          
+
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,7 @@ const About = () => {
 
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+
             {/* Left Column - Main Info */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -60,8 +61,8 @@ const About = () => {
               <div className="bg-slate-800/40 rounded-2xl p-6 md:p-8 border border-slate-700/50">
                 <h2 className="text-2xl font-bold text-white mb-4">Who We Are</h2>
                 <p className="text-slate-300 leading-relaxed">
-                  Techcyfy is a global provider of authentic IT certification exam vouchers. 
-                  We help professionals and students achieve their career goals by offering 
+                  Techcyfy is a global provider of authentic IT certification exam vouchers.
+                  We help professionals and students achieve their career goals by offering
                   genuine exam vouchers at discounted prices.
                 </p>
               </div>
@@ -69,8 +70,8 @@ const About = () => {
               <div className="bg-slate-800/40 rounded-2xl p-6 md:p-8 border border-slate-700/50">
                 <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
                 <p className="text-slate-300 leading-relaxed">
-                  Our mission is to make IT certification accessible to everyone by providing 
-                  affordable, genuine exam vouchers with instant delivery. We believe in 
+                  Our mission is to make IT certification accessible to everyone by providing
+                  affordable, genuine exam vouchers with instant delivery. We believe in
                   transparency, trust, and customer satisfaction.
                 </p>
               </div>
