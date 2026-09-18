@@ -47,7 +47,6 @@ const Navbar = () => {
 
   // Navigation links
   const navLinks = [
-
     {
       name: "Home",
       path: "/",
@@ -63,7 +62,7 @@ const Navbar = () => {
       path: "/about",
       icon: <FaInfoCircle className="text-sm" />,
     },
-     {
+    {
       name: "Reviews",
       path: "/reviews",
       icon: <FaStar className="text-sm" />,
@@ -74,67 +73,48 @@ const Navbar = () => {
       icon: <FaClipboardList className="text-sm" />,
     },
     {
-      name:"Contact",
-      path:"/contact",
-      icon:<FaEnvelope className="text-sm"/>
-    }
-
-   
+      name: "Contact",
+      path: "/contact",
+      icon: <FaEnvelope className="text-sm" />,
+    },
   ];
 
   // Blog categories
   const blogCategories = [
-    {
-      name: "Microsoft Azure",
-      path: "/blog/microsoft-azure-exam-vouchers",
-    },
-    {
-      name: "AWS",
-      path: "/blog/aws-exam-vouchers",
-    },
-    {
-      name: "Google Cloud",
-      path: "/blog/google-cloud-exam-vouchers",
-    },
-    {
-      name: "Databricks",
-      path: "/blog/databricks-exam-vouchers",
-    },
-    {
-      name: "Fortinet",
-      path: "/blog/fortinet-exam-vouchers",
-    },
-    {
-      name: "CompTIA",
-      path: "/blog/comptia-exam-vouchers",
-    },
-    {
-      name:"Salesforce",
-      path:"/blog/salesforce-exam-vouchers"
-    }
-    ,
-    {
-      name:"hashicorp terraform certification",
-      path:"/blog/hashicorp-exam-vouchers"
-    }
-    ,
-    {
-      name:"Claude Certification",
-      path:"/blog/ClaudeCertification-vouchers"
-    }
+    { name: "Microsoft Azure", path: "/blog/microsoft-azure-exam-vouchers" },
+    { name: "AWS", path: "/blog/aws-exam-vouchers" },
+    { name: "Google Cloud", path: "/blog/google-cloud-exam-vouchers" },
+    { name: "Databricks", path: "/blog/databricks-exam-vouchers" },
+    { name: "Fortinet", path: "/blog/fortinet-exam-vouchers" },
+    { name: "CompTIA", path: "/blog/comptia-exam-vouchers" },
+    { name: "Salesforce", path: "/blog/salesforce-exam-vouchers" },
+    { name: "HashiCorp Terraform", path: "/blog/hashicorp-exam-vouchers" },
+    { name: "Claude Certification", path: "/blog/ClaudeCertification-exam-vouchers" },
+    { name: "ServiceNow CSA", path: "/blog/ServiceNowCSA-exam-vouchers" },
+    { name: "TOGAF Certification", path: "/blog/TOGAFCertification-exam-vouchers" },
+    { name: "Oracle Certification", path: "/blog/OracleCertification-exam-vouchers" },
+    { name: "VMware Certification", path: "/blog/VMwareCertification-exam-vouchers" },
+    { name: "Datadog APM", path: "/blog/DatadogAPMCertification-exam-vouchers" },
+    { name: "Python Certification", path: "/blog/PythonCertification-exam-vouchers" },
+    { name: "Pega Decisioning Consultant 25", path: "/blog/PegaDecisioningConsultant25-exam-vouchers" },
+    { name: "Cisco Certification", path: "/blog/CiscoCertification-exam-vouchers" },
+    { name: "Juniper Certification", path: "/blog/JuniperCertification-exam-vouchers" },
+    { name: "Palo Alto Networks", path: "/blog/palo-alto-networks-certification-exam-vouchers" },
+    { name: "Linux Foundation", path: "/blog/LinuxCertification-exam-vouchers" },
+    { name: "F5 Certification", path: "/blog/F5NetworksCertification-exam-vouchers" },
   ];
 
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-          ? "bg-black/95 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border-b border-slate-800/50"
-          : "bg-black/80 backdrop-blur-md border-b border-slate-800/30"
-          }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-black/95 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border-b border-slate-800/50"
+            : "bg-black/80 backdrop-blur-md border-b border-slate-800/30"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
-
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -153,15 +133,15 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-1">
-
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) =>
-                    `relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive
-                      ? "text-white bg-sky-500/10 border border-sky-500/30"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    `relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      isActive
+                        ? "text-white bg-sky-500/10 border border-sky-500/30"
+                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
                     }`
                   }
                 >
@@ -169,15 +149,10 @@ const Navbar = () => {
                     <>
                       <span className="flex items-center gap-2">
                         <span
-                          className={
-                            isActive
-                              ? "text-sky-400"
-                              : "text-slate-500"
-                          }
+                          className={isActive ? "text-sky-400" : "text-slate-500"}
                         >
                           {link.icon}
                         </span>
-
                         {link.name}
                       </span>
 
@@ -204,10 +179,11 @@ const Navbar = () => {
                 onMouseLeave={() => setBlogOpen(false)}
               >
                 <div
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg cursor-default transition-all duration-300 ${location.pathname.startsWith("/blog")
-                    ? "text-white bg-sky-500/10 border border-sky-500/30"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                    }`}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg cursor-default transition-all duration-300 ${
+                    location.pathname.startsWith("/blog")
+                      ? "text-white bg-sky-500/10 border border-sky-500/30"
+                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                  }`}
                 >
                   <FaBookOpen
                     className={
@@ -218,8 +194,9 @@ const Navbar = () => {
                   />
                   <span className="text-sm font-medium">Blog</span>
                   <FaChevronDown
-                    className={`text-xs transition-transform duration-300 ${blogOpen ? "rotate-180" : ""
-                      }`}
+                    className={`text-xs transition-transform duration-300 ${
+                      blogOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </div>
 
@@ -227,25 +204,11 @@ const Navbar = () => {
                 <AnimatePresence>
                   {blogOpen && (
                     <motion.div
-                      initial={{
-                        opacity: 0,
-                        y: 10,
-                        scale: 0.97,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                      }}
-                      exit={{
-                        opacity: 0,
-                        y: 10,
-                        scale: 0.97,
-                      }}
-                      transition={{
-                        duration: 0.2,
-                      }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 rounded-xl overflow-hidden bg-white backdrop-blur-xl border border-slate-200 shadow-2xl shadow-black/40"
+                      initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.97 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-xl overflow-hidden bg-white backdrop-blur-xl border border-slate-200 shadow-2xl shadow-black/40"
                     >
                       {/* Dropdown Header */}
                       <div className="px-4 py-3 border-b border-slate-200 bg-gradient-to-r from-sky-50 to-amber-50">
@@ -254,35 +217,44 @@ const Navbar = () => {
                         </p>
                       </div>
 
-                      {/* Categories */}
-                      <div className="p-2 bg-white">
+                      {/* Categories – Scrollable */}
+                      <div className="max-h-[420px] overflow-y-auto p-2 bg-white scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent">
                         {blogCategories.map((category) => (
                           <NavLink
                             key={category.name}
                             to={category.path}
                             className={({ isActive }) =>
-                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${isActive
-                                ? "bg-sky-100 text-sky-700 border border-sky-200"
-                                : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
+                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                                isActive
+                                  ? "bg-sky-100 text-sky-700 border border-sky-200"
+                                  : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
                               }`
                             }
                           >
                             {({ isActive }) => (
                               <>
                                 <span
-                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${isActive
-                                    ? "bg-sky-500 scale-125"
-                                    : "bg-sky-400"
-                                    }`}
+                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 flex-shrink-0 ${
+                                    isActive ? "bg-sky-500 scale-125" : "bg-sky-400"
+                                  }`}
                                 />
-                                <span className="font-medium">{category.name}</span>
+                                <span className="font-medium truncate">
+                                  {category.name}
+                                </span>
                                 {isActive && (
-                                  <FaCheckCircle className="ml-auto text-[10px] text-sky-500" />
+                                  <FaCheckCircle className="ml-auto text-[10px] text-sky-500 flex-shrink-0" />
                                 )}
                               </>
                             )}
                           </NavLink>
                         ))}
+                      </div>
+
+                      {/* Dropdown Footer */}
+                      <div className="px-4 py-2.5 border-t border-slate-200 bg-gradient-to-r from-sky-50 to-amber-50 text-center">
+                        <span className="text-xs text-slate-500 font-medium">
+                          {blogCategories.length} certifications available
+                        </span>
                       </div>
                     </motion.div>
                   )}
@@ -292,26 +264,15 @@ const Navbar = () => {
 
             {/* Right Side */}
             <div className="flex items-center gap-2 md:gap-3">
-
               {/* Accredited Badge */}
               <motion.div
-                initial={{
-                  opacity: 0,
-                  scale: 0.8,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.2,
-                }}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-default"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-default"
               >
                 <div className="relative">
                   <FaShieldAlt className="text-emerald-400 text-sm group-hover:scale-110 transition-transform duration-300" />
-
                   <FaCheckCircle className="absolute -top-1 -right-1 text-[8px] text-emerald-300" />
                 </div>
 
@@ -329,33 +290,15 @@ const Navbar = () => {
                 className="lg:hidden p-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/50 transition-colors border border-slate-700/50 hover:border-slate-600"
                 aria-label="Toggle menu"
               >
-                <AnimatePresence
-                  mode="wait"
-                  initial={false}
-                >
+                <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={isOpen ? "close" : "open"}
-                    initial={{
-                      rotate: -90,
-                      opacity: 0,
-                    }}
-                    animate={{
-                      rotate: 0,
-                      opacity: 1,
-                    }}
-                    exit={{
-                      rotate: 90,
-                      opacity: 0,
-                    }}
-                    transition={{
-                      duration: 0.2,
-                    }}
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {isOpen ? (
-                      <FaTimes size={22} />
-                    ) : (
-                      <FaBars size={22} />
-                    )}
+                    {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
                   </motion.div>
                 </AnimatePresence>
               </motion.button>
@@ -367,53 +310,35 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{
-                height: 0,
-                opacity: 0,
-              }}
-              animate={{
-                height: "auto",
-                opacity: 1,
-              }}
-              exit={{
-                height: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="lg:hidden overflow-hidden bg-black/95 backdrop-blur-xl border-t border-slate-800/50 shadow-2xl"
             >
-              <div className="px-4 pt-2 pb-4 space-y-1">
-
+              <div className="px-4 pt-2 pb-4 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
                 {/* Main Links */}
                 {navLinks.map((link) => (
                   <NavLink
                     key={link.name}
                     to={link.path}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive
-                        ? "bg-sky-500/10 border border-sky-500/30 text-white"
-                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                      `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                        isActive
+                          ? "bg-sky-500/10 border border-sky-500/30 text-white"
+                          : "text-slate-400 hover:text-white hover:bg-slate-800/50"
                       }`
                     }
                   >
                     {({ isActive }) => (
                       <>
                         <span
-                          className={
-                            isActive
-                              ? "text-sky-400"
-                              : "text-slate-500"
-                          }
+                          className={isActive ? "text-sky-400" : "text-slate-500"}
                         >
                           {link.icon}
                         </span>
 
-                        <span className="font-medium">
-                          {link.name}
-                        </span>
+                        <span className="font-medium">{link.name}</span>
 
                         {isActive && (
                           <span className="ml-auto text-xs bg-sky-500/20 text-sky-400 px-2 py-0.5 rounded-full">
@@ -427,13 +352,13 @@ const Navbar = () => {
 
                 {/* Mobile Blog */}
                 <div className="rounded-xl overflow-hidden">
-
                   <button
                     onClick={() => setBlogOpen(!blogOpen)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${location.pathname.startsWith("/blog")
-                      ? "bg-sky-500/10 border border-sky-500/30 text-white"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                      }`}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                      location.pathname.startsWith("/blog")
+                        ? "bg-sky-500/10 border border-sky-500/30 text-white"
+                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    }`}
                   >
                     <span
                       className={
@@ -445,55 +370,51 @@ const Navbar = () => {
                       <FaBookOpen className="text-sm" />
                     </span>
 
-                    <span className="font-medium">
-                      Blog
+                    <span className="font-medium">Blog</span>
+
+                    <span className="ml-auto text-xs text-slate-500 mr-2">
+                      {blogCategories.length}
                     </span>
 
                     <FaChevronDown
-                      className={`ml-auto text-xs transition-transform duration-300 ${blogOpen ? "rotate-180" : ""
-                        }`}
+                      className={`text-xs transition-transform duration-300 ${
+                        blogOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
 
                   <AnimatePresence>
                     {blogOpen && (
                       <motion.div
-                        initial={{
-                          height: 0,
-                          opacity: 0,
-                        }}
-                        animate={{
-                          height: "auto",
-                          opacity: 1,
-                        }}
-                        exit={{
-                          height: 0,
-                          opacity: 0,
-                        }}
-                        className="ml-4 mt-1 pl-3 border-l border-slate-700 space-y-1"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="ml-4 mt-1 pl-3 border-l border-slate-700 space-y-1 max-h-[400px] overflow-y-auto pr-1"
                       >
                         {blogCategories.map((category) => (
                           <NavLink
                             key={category.name}
                             to={category.path}
                             className={({ isActive }) =>
-                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 bg-white ${isActive
-                                ? "text-sky-700 bg-sky-100 border border-sky-200"
-                                : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
+                              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 bg-white ${
+                                isActive
+                                  ? "text-sky-700 bg-sky-100 border border-sky-200"
+                                  : "text-slate-800 hover:text-sky-600 hover:bg-sky-50 hover:pl-4"
                               }`
                             }
                           >
                             {({ isActive }) => (
                               <>
                                 <span
-                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${isActive
-                                    ? "bg-sky-500 scale-125"
-                                    : "bg-sky-400"
-                                    }`}
+                                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 flex-shrink-0 ${
+                                    isActive ? "bg-sky-500 scale-125" : "bg-sky-400"
+                                  }`}
                                 />
-                                <span className="font-medium">{category.name}</span>
+                                <span className="font-medium truncate">
+                                  {category.name}
+                                </span>
                                 {isActive && (
-                                  <FaCheckCircle className="ml-auto text-[10px] text-sky-500" />
+                                  <FaCheckCircle className="ml-auto text-[10px] text-sky-500 flex-shrink-0" />
                                 )}
                               </>
                             )}
@@ -503,7 +424,6 @@ const Navbar = () => {
                     )}
                   </AnimatePresence>
                 </div>
-
               </div>
             </motion.div>
           )}

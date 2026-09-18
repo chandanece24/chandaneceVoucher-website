@@ -29,6 +29,18 @@ import GoogleCloudVouchers from "./Blog/GoogleCloudVoucher";
 import SalesforceVouchers from "./Blog/SalesforceCRM";
 import HashiCorpTerraformCertification from "./Blog/HashiCorpTerraformCertification";
 import ClaudeCertification from "./Blog/ClaudeCetfification";
+import ServiceNowCSACertification from "./Blog/ServiceNowCSACertification";
+import TOGAFCertification from "./Blog/TOGOFCertification";
+import OracleCertification from "./Blog/OracleCertification";
+import VMwareCertification from "./Blog/VMwareCertification";
+import DatadogAPMCertification from "./Blog/DatadogAPMCertification";
+import PythonCertification from "./Blog/PythonCertification";
+import PegaDecisioningConsultant25 from "./Blog/PageDecisioningConsultant.jsx";
+import CiscoCertification from "./Blog/CiscoCertification.jsx";
+import JuniperCertification from "./Blog/JuniperCertification.jsx";
+import PaloAltoNetworksCertification from "./Blog/PaloAltoNetworksCertification.jsx";
+import LinuxFoundationCertification from "./Blog/LinuxFoundationCertification.jsx";
+import F5Certification from "./Blog/F5Certification.jsx";
 function App() {
   const location = useLocation();
 
@@ -155,8 +167,46 @@ function App() {
             element={<HashiCorpTerraformCertification />} />
 
           <Route
-            path="blog/ClaudeCertification-vouchers"
+            path="blog/ClaudeCertification-exam-vouchers"
             element={<ClaudeCertification />} />
+
+          <Route
+            path="blog/ServiceNowCSA-exam-vouchers"
+            element={<ServiceNowCSACertification />} />
+
+          <Route
+            path="blog/TOGAFCertification-exam-vouchers"
+            element={<TOGAFCertification />} />
+
+          <Route path="blog/OracleCertification-exam-vouchers"
+            element={<OracleCertification />} />
+
+          <Route path="blog/VMwareCertification-exam-vouchers"
+            element={<VMwareCertification />} />
+
+          <Route path="blog/DatadogAPMCertification-exam-vouchers"
+          element={<DatadogAPMCertification/>}/>
+
+          <Route path="blog/PythonCertification-exam-vouchers"
+          element={<PythonCertification/>}/>  
+          
+          <Route path="blog/PegaDecisioningConsultant25-exam-vouchers"
+          element={<PegaDecisioningConsultant25/>}/>
+
+          <Route path="blog/CiscoCertification-exam-vouchers"
+          element={<CiscoCertification/>}/>
+
+          <Route path="blog/JuniperCertification-exam-vouchers"
+          element={<JuniperCertification/>}/>
+
+          <Route path="blog/palo-alto-networks-certification-exam-vouchers"
+          element={<PaloAltoNetworksCertification/>}/>
+
+          <Route path="blog/LinuxCertification-exam-vouchers"
+          element={<LinuxFoundationCertification/>}/>
+
+          <Route path="blog/F5NetworksCertification-exam-vouchers"
+          element={<F5Certification/>}/>
         </Route>
 
 
