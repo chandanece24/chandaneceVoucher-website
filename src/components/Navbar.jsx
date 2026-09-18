@@ -100,7 +100,7 @@ const Navbar = () => {
     { name: "Cisco Certification", path: "/blog/CiscoCertification-exam-vouchers" },
     { name: "Juniper Certification", path: "/blog/JuniperCertification-exam-vouchers" },
     { name: "Palo Alto Networks", path: "/blog/palo-alto-networks-certification-exam-vouchers" },
-    { name: "Linux Foundation", path: "/blog/LinuxCertification-exam-vouchers" },
+    { name: "Linux Foundation", path: "/blog/LinuxFoundation-Certification-exam-vouchers" },
     { name: "F5 Certification", path: "/blog/F5NetworksCertification-exam-vouchers" },
   ];
 
