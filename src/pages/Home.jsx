@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
 import SEO from "../components/SEO";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaSearch,
@@ -336,6 +337,11 @@ const HeroArt = () => (
 // ======================================================
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleSelectBrand = (guideId) => {
+    navigate(`/exam-list/${guideId}`);
+  };
+
   // ====================================================
   // BREADCRUMB
   // ====================================================
@@ -692,7 +698,7 @@ const Home = () => {
             CERTIFICATION LOGOS
         ================================================== */}
 
-        <LogoCarousel />
+        <LogoCarousel onSelectBrand={handleSelectBrand} />
 
         {/* ==================================================
             VOUCHERS

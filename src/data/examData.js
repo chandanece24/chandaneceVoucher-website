@@ -3,7 +3,7 @@
 //examGuides
 
 
- export const examGuides= {
+export const examGuides = {
   aws: {
     title: "AWS Certification Exams",
     description:
@@ -1295,6 +1295,33 @@
       "Network Security": ["PCNSA", "PCNSE"],
       "Security Engineer": ["PCNSA", "PCNSE"],
       "Firewall Administrator": ["PCNSA"],
+    },
+  },
+  terraform: {
+    title: "HashiCorp Terraform Certification Exams",
+    description: "Explore HashiCorp Terraform certifications covering infrastructure as code, cloud provisioning, and automation.",
+    levels: [
+      {
+        name: "Associate",
+        exams: [
+          {
+            code: "TA-002",
+            name: "HashiCorp Certified: Terraform Associate",
+            description: "Validates foundational Terraform skills including IaC concepts, workflow, and configuration.",
+          },
+        ],
+      },
+    ],
+    whyCertify: [
+      "Validate infrastructure-as-code skills.",
+      "Build a DevOps career.",
+      "Improve cloud automation knowledge.",
+      "Demonstrate Terraform expertise.",
+    ],
+    careerPaths: {
+      DevOps: ["TA-002"],
+      "Cloud Engineer": ["TA-002"],
+      "Infrastructure Engineer": ["TA-002"],
     },
   },
 

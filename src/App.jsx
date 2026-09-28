@@ -41,6 +41,7 @@ import JuniperCertification from "./Blog/JuniperCertification.jsx";
 import PaloAltoNetworksCertification from "./Blog/PaloAltoNetworksCertification.jsx";
 import LinuxFoundationCertification from "./Blog/LinuxFoundationCertification.jsx";
 import F5Certification from "./Blog/F5Certification.jsx";
+
 function App() {
   const location = useLocation();
 
@@ -115,6 +116,10 @@ function App() {
             path="vouchers/:id/exams"
             element={<ExamList />}
           />
+          <Route
+            path="/exam-list/:guideId"
+            element={<ExamList />}
+          />
 
           {/* ==============================
               BLOG MAIN PAGE
@@ -185,28 +190,28 @@ function App() {
             element={<VMwareCertification />} />
 
           <Route path="blog/DatadogAPMCertification-exam-vouchers"
-          element={<DatadogAPMCertification/>}/>
+            element={<DatadogAPMCertification />} />
 
           <Route path="blog/PythonCertification-exam-vouchers"
-          element={<PythonCertification/>}/>  
-          
+            element={<PythonCertification />} />
+
           <Route path="blog/PegaDecisioningConsultant25-exam-vouchers"
-          element={<PegaDecisioningConsultant25/>}/>
+            element={<PegaDecisioningConsultant25 />} />
 
           <Route path="blog/CiscoCertification-exam-vouchers"
-          element={<CiscoCertification/>}/>
+            element={<CiscoCertification />} />
 
           <Route path="blog/JuniperCertification-exam-vouchers"
-          element={<JuniperCertification/>}/>
+            element={<JuniperCertification />} />
 
           <Route path="blog/palo-alto-networks-certification-exam-vouchers"
-          element={<PaloAltoNetworksCertification/>}/>
+            element={<PaloAltoNetworksCertification />} />
 
-          <Route path="blog/LinuxCertification-exam-vouchers"
-          element={<LinuxFoundationCertification/>}/>
+          <Route path="blog/LinuxFoundation-Certification-exam-vouchers"
+            element={<LinuxFoundationCertification />} />
 
           <Route path="blog/F5NetworksCertification-exam-vouchers"
-          element={<F5Certification/>}/>
+            element={<F5Certification />} />
         </Route>
 
 
